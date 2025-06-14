@@ -1,0 +1,11 @@
+{
+  "name": "@noct/noctis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "author": "noctvale <noctvale@outlook.com>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT"
+}
