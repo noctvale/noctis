@@ -27,18 +27,9 @@ if __name__ == "__main__":
 
   def collector_callback(html):
     checksum = hashlib.sha256(html.encode("utf-8")).hexdigest()
-    response = ollama.chat(
-      model="tinyllama:latest",
-      messages=[
-        {"role": "system", "content": "You are a helpful assistant that decide if html is relevant to the user interest answer with 'Y' or 'N'"},
-        {"role": "user", "content": f"Here is the html: {text} \n\n Is it relevant to {args.prompt}"}
-      ]
-    )
 
-    logger.debug(f"Response: {response['message']['content']}")
-    if response['message']['content'] == "Y":
-      with open(os.path.join(args.output_dir, f"{checksum}.html"), "w", encoding="utf-8") as f:
-        f.write(html)
+    with open(os.path.join(args.output_dir, f"{checksum}.html"), "w", encoding="utf-8") as f:
+      f.write(html)
 
 
 
