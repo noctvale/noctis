@@ -19,7 +19,7 @@ if __name__ == "__main__":
   args_parser.add_argument("--max_retries", help="Maximum number of retries", default=3, type=int)
   args_parser.add_argument("--max_scrolls", help="Maximum number of scrolls", default=10, type=int)
   args_parser.add_argument("--output_dir", help="Output directory", default="output")
-  args_parser.add_argument("--prompt", help="Prompt to use for the crawler", required=True)
+  
 
   args = args_parser.parse_args() 
 
